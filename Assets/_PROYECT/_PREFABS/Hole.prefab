@@ -157,6 +157,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 333a33eff24002c4f8d8a15e41638fae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HoleController
+  isFill: 0
   isCurrentTurn: 0
   alertMaterial: {fileID: 2100000, guid: 221c394fba055f445ab9138cb0e95b89, type: 2}
+  errorMaterial: {fileID: 2100000, guid: 9bb09e7989001234abb0e9ecd0615de7, type: 2}
   visualMeshRender: {fileID: 5873688433076716535}
+  onHoleClicked:
+    m_PersistentCalls:
+      m_Calls: []

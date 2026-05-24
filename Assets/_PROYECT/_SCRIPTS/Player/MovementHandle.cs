@@ -6,18 +6,30 @@ public class MovementHandle : MonoBehaviour
     private InputReader inputReader;
     private PlayerData playerData;
     private float lookRotation;
+    [SerializeField]
+    private bool canMove;
     void Start()
     {
         inputReader = GetComponent<InputReader>();
         playerData = GetComponent<PlayerData>();
         playerData.camHolder.eulerAngles = Vector3.zero;
+        canMove = true;
+        CapController.onMachineFocus += ToggleCanMove;
+    }
+
+    private void ToggleCanMove()
+    {
+        canMove = !canMove;
     }
 
     // Update is called once per frame
     void Update()
     {
-        RotationByMouse();
-        Movement();
+        if (canMove)
+        {
+            RotationByMouse();
+            Movement();
+        }
     }
 
     private void Movement()

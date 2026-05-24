@@ -4,11 +4,11 @@ public class BoltController : MonoBehaviour, I_interact
 {
 
     [SerializeField] private float movementSpeed = 0.01f;
-    [SerializeField] private bool beingInteracted;
+    [SerializeField] public bool beingInteracted;
     [SerializeField] private Animator boltNutAnimator;
     [SerializeField] private float boltTurnAnimationSpeed;
     private float direction;
-    [SerializeField] private bool onPosition;
+    [SerializeField] public bool onPosition;
     //[SerializeField] 
     void Start()
     {
@@ -49,7 +49,7 @@ public class BoltController : MonoBehaviour, I_interact
             direction = 0;
             if(other.TryGetComponent(out HoleController holeController))
             {
-                //holeController.isFill = true;
+                holeController.isFill = true;
             }
 
         }

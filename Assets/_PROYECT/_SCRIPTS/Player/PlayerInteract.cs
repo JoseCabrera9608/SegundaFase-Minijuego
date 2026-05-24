@@ -25,7 +25,7 @@ public class PlayerInteract : MonoBehaviour
                 interactable.Interact();
             }
         }
-        Debug.Log("Call Interact");
+        Debug.Log("Call Interact"); 
     }
 
     private void OnDrawGizmos()
