@@ -49,7 +49,7 @@ public class BoltController : MonoBehaviour, I_interact
             direction = 0;
             if(other.TryGetComponent(out HoleController holeController))
             {
-                holeController.isFill = true;
+                //holeController.isFill = true;
             }
 
         }

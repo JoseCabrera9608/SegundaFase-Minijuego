@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: ede54bc9eef51c94cb78c4f3e8ee12cb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -116,9 +116,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8079936245551817635}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.97, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 0.65890443, y: 0.65890443, z: 0.65890443}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7674743348304854755}
@@ -157,8 +157,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 333a33eff24002c4f8d8a15e41638fae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HoleController
-  isFill: 0
   isCurrentTurn: 0
   alertMaterial: {fileID: 2100000, guid: 221c394fba055f445ab9138cb0e95b89, type: 2}
   visualMeshRender: {fileID: 5873688433076716535}
-  turn: 0

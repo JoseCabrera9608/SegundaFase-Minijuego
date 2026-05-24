@@ -23,24 +23,15 @@ public class CapController : MonoBehaviour, I_interact
 
     IEnumerator Sequence()
     {
-        /*yield return new WaitForSeconds(2f);
-        foreach (HoleController holeController in holesList)
-        {
-            holeController.isCurrentTurn = true;
-            holeController.StartChangeColor();
-            
-
-        }
-        isInteracted = false;*/
+        
         for (int i = 0; i < holesList.Count; i++)
         {
             holesList[i].isCurrentTurn = true;
             holesList[i].StartChangeColor();
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(2f);
             holesList[i].isCurrentTurn = false;
             turn++;
         }
-        yield return new WaitForSeconds(2f);
         if(turn>= holesList.Count)
         {
             turn = 0;
