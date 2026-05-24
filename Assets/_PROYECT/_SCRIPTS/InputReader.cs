@@ -31,6 +31,7 @@ public class InputReader : MonoBehaviour, InputSystem_Actions.IPlayerActions
     {
         if (!context.performed) { return; }
         onInteract?.Invoke();
+        Debug.Log("Pressing E");
     }
 
     public void OnLook(InputAction.CallbackContext context)
