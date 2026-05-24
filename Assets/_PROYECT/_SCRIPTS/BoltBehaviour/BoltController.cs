@@ -8,6 +8,7 @@ public class BoltController : MonoBehaviour, I_interact
     [SerializeField] private Animator boltNutAnimator;
     [SerializeField] private float boltTurnAnimationSpeed;
     private float direction;
+    [SerializeField] private bool onPosition;
     //[SerializeField] 
     void Start()
     {
@@ -29,12 +30,28 @@ public class BoltController : MonoBehaviour, I_interact
 
     public void MoveBolt()
     {
-        if (beingInteracted)
+        if (beingInteracted && onPosition == false)
         {
             direction = InputReader.Instance.move.x;
             transform.Translate(Vector3.forward * direction * movementSpeed);
             boltNutAnimator.SetFloat("Direction", -direction*boltTurnAnimationSpeed);
             
+        }
+    }
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Hole"))
+        {
+            onPosition = true;
+            beingInteracted = false;
+            movementSpeed = 0;
+            direction = 0;
+            if(other.TryGetComponent(out HoleController holeController))
+            {
+                holeController.isFill = true;
+            }
+
         }
     }
 }
