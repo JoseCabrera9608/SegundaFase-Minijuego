@@ -4,12 +4,17 @@ using UnityEngine.InputSystem;
 
 public class InputReader : MonoBehaviour, InputSystem_Actions.IPlayerActions
 {
+    public static InputReader Instance;
     public Vector2 move;
     public Vector2 look;
 
     private InputSystem_Actions inputSystem_Actions;
 
     public static event Action onInteract;
+    private void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
         inputSystem_Actions = new InputSystem_Actions();

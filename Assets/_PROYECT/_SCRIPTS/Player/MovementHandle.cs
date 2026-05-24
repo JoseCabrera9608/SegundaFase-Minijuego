@@ -10,6 +10,7 @@ public class MovementHandle : MonoBehaviour
     {
         inputReader = GetComponent<InputReader>();
         playerData = GetComponent<PlayerData>();
+        playerData.camHolder.eulerAngles = Vector3.zero;
     }
 
     // Update is called once per frame

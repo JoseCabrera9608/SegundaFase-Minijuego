@@ -8,4 +8,11 @@ public class PlayerData : MonoBehaviour
     public float minLookRotation = 80f;
     public float maxLookRotation = 80f;
     public Transform camHolder;
+
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+    }
 }
