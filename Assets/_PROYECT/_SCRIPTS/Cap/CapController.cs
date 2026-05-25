@@ -56,10 +56,7 @@ public class CapController : MonoBehaviour, I_interact
                 hole.onHoleClicked.AddListener(OnSelectedHole);
             }
         }
-        else
-        {
 
-        }
     }
 
     public void Interact()
@@ -231,8 +228,6 @@ public class CapController : MonoBehaviour, I_interact
             machineBoxCollider.enabled = true;
         }
 
-        //UpdateTurnText();
-        //HighlightCurrentHole();
     }
 
     #endregion
