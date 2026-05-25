@@ -27,7 +27,7 @@ public class CapController : MonoBehaviour, I_interact
 
 
     [Header("OnReality Variables")]
-    [SerializeField] private GameObject explosionPrefab;
+    [SerializeField] private ParticleSystem explosionPrefab;
     
     [Header("Debug Variables")]
     [SerializeField] private int turn;
@@ -173,7 +173,9 @@ public class CapController : MonoBehaviour, I_interact
                 break;
 
             case MachineMode.Reality:
-               // StartCoroutine(TriggerExplosion());
+                explosionPrefab.Play();
+                GameResetManager.Instance.OnResetGame();
+                
                 break;
         }
     }
