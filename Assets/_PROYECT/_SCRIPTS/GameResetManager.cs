@@ -11,6 +11,7 @@ public class GameResetManager : MonoBehaviour
     [SerializeField] private Animator fadeInAnimator;
     private float fadeInMultiplierSpeed = 1f;
     [SerializeField] private CinemachineCamera cinemachineOnDeadCamera;
+    bool isReseting;
     private void Start()
     {
         Instance = this;
@@ -18,6 +19,8 @@ public class GameResetManager : MonoBehaviour
 
     public void OnResetGame()
     {
+        if (isReseting) { return; }
+        isReseting = true;
         StartCoroutine(ResetGame());
     }
 
@@ -28,6 +31,7 @@ public class GameResetManager : MonoBehaviour
         fadeInAnimator.SetFloat("Multiplier", -fadeInMultiplierSpeed);
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        
     }
 
 
